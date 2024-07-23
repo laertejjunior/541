@@ -84,10 +84,11 @@
       notify:
         - docker status
 
-    - name: Adiciona o usuario suporte no grupo docker
+    - name: Adiciona o usuario suporte nos grupos docker e sudo
       user:
         name: suporte
-        group: docker
+        groups: docker,sudo
+        append: yes
 
     - name: Cria o diretório registry:5000
       file:
